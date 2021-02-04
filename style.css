@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: cursive;
+}
+
+header{
+  text-align: center;
+  margin-top: 1.9em;
+  margin-bottom: 2em;
+}
+
+
+.chicken-container, .beef-container, .sushi-container{
+  background-color: gray;
+  border: solid 2px black;
+  position: relative;
+  margin-bottom: 1.3em;
+}
+
+.banner {
+  width: 120px;
+  background-color: rgb(213, 213, 213);
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  right: 0px;
+  padding: 0.2em 1.5em;
+  font-size: 1.2rem;
+  border: solid 2px black;
+  font-weight: bold;
+
+}
+
+.chicken-banner{
+  background-color: rgb(255, 155, 156);
+}
+
+.beef-banner{
+  background-color: rgb(252, 66, 69);
+  color: antiquewhite;
+}
+
+.sushi-banner{
+  background-color: burlywood;
+}
+
+p{
+  margin: 2.9em 1.1em 2.7em 1.1em ;
+
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+@media (min-width: 766px){
+  .container{
+  display: grid;  
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-template-areas: 
+  "left right"
+  "footer footer" 
+  ;
+}
+.chicken-container{
+  grid-area: left;
+}
+
+.beef-container{
+  grid-area: right;
+}
+
+.sushi-container{
+  grid-area: footer;
+}
+
+} 
+
+@media (min-width: 991px){
+  .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    " left center right"  
+    ;
+  }
+  .chicken-container{
+  grid-area: left;
+  }
+
+  .beef-container{
+  grid-area: center;
+  }
+
+  .sushi-container{
+  grid-area: right;
+  }
+
+}
